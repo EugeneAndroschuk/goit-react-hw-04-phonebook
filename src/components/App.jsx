@@ -15,9 +15,11 @@ const App = () => {
     try {
       const unparsed = localStorage.getItem('phonebook');
       const parsed = JSON.parse(unparsed);
-      if (parsed) return [...parsed];
+      if (parsed !== null) return [...parsed]
+      else return [];
     } catch (error) {
       console.log(error);
+      return [];
     }
   }
 
@@ -48,6 +50,7 @@ const App = () => {
   };
 
   const getFilteredContacts = () => {
+    if (contacts.length === 0) return;
     const normFilter = filter.toLowerCase();
     return contacts.filter(contact =>
       contact.name.toLowerCase().includes(normFilter)
