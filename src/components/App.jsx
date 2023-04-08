@@ -50,7 +50,6 @@ const App = () => {
   };
 
   const getFilteredContacts = () => {
-    if (contacts.length === 0) return;
     const normFilter = filter.toLowerCase();
     return contacts.filter(contact =>
       contact.name.toLowerCase().includes(normFilter)
