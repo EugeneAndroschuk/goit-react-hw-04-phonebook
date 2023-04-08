@@ -27,7 +27,7 @@ const App = () => {
     );
 
     if (isExist) {
-      alert(`${name} is already in contacts!`);
+      alert(`${name} is already in Contacts!`);
       return;
     }
     const newContact = {
